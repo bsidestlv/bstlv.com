@@ -1,7 +1,22 @@
 import Navigation from "../components/Navigation";
 import Link from "next/link";
+import { sessionizeAPI, getFallbackSpeakers, SessionizeSpeaker } from "../../lib/api/sessionize";
+import Image from "next/image";
 
-export default function SpeakersPage() {
+async function getSpeakersData(): Promise<SessionizeSpeaker[]> {
+  try {
+    const speakers = await sessionizeAPI.getSpeakers();
+    return speakers.length > 0 ? speakers : getFallbackSpeakers();
+  } catch (error) {
+    console.error('Failed to fetch speakers:', error);
+    return getFallbackSpeakers();
+  }
+}
+
+export default async function SpeakersPage() {
+  const speakers = await getSpeakersData();
+  const isUsingFallback = speakers.length === 1 && speakers[0].id === 'fallback-1';
+
   return (
     <div className="min-h-screen bg-gray-50">
       <Navigation />
@@ -21,20 +36,85 @@ export default function SpeakersPage() {
       {/* Main Content */}
       <section className="py-16 bg-white">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <div className="bg-blue-50 border border-blue-200 rounded-lg p-8">
-            <h2 className="text-2xl font-bold text-blue-900 mb-4">📢 Event Postponed</h2>
-            <p className="text-lg text-blue-800 mb-6">
-              Due to the ongoing war and the postponement of Cyber Week by Tel Aviv University, 
-              BSidesTLV 2025 has been postponed. Speaker announcements will be made once we 
-              confirm the new date.
-            </p>
-            <p className="text-blue-700 mb-6">
-              We appreciate the patience of all our amazing speakers and the community. 
-              All accepted speakers will be contacted with updates as they become available.
-            </p>
-          </div>
+          {isUsingFallback ? (
+            <div className="bg-blue-50 border border-blue-200 rounded-lg p-8">
+              <h2 className="text-2xl font-bold text-blue-900 mb-4">📢 Event Postponed</h2>
+              <p className="text-lg text-blue-800 mb-6">
+                Due to the ongoing war and the postponement of Cyber Week by Tel Aviv University, 
+                BSidesTLV 2025 has been postponed. Speaker announcements will be made once we 
+                confirm the new date.
+              </p>
+              <p className="text-blue-700 mb-6">
+                We appreciate the patience of all our amazing speakers and the community. 
+                All accepted speakers will be contacted with updates as they become available.
+              </p>
+            </div>
+          ) : (
+            <div className="bg-green-50 border border-green-200 rounded-lg p-8">
+              <h2 className="text-2xl font-bold text-green-900 mb-4">🎤 Meet Our Speakers</h2>
+              <p className="text-lg text-green-800">
+                Amazing speakers confirmed for BSidesTLV 2025! Check out their profiles below.
+              </p>
+            </div>
+          )}
         </div>
       </section>
+
+      {/* Speakers Grid */}
+      {!isUsingFallback && (
+        <section className="py-16 bg-gray-100">
+          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+              {speakers.map((speaker) => (
+                <div key={speaker.id} className="bg-white rounded-lg shadow-md overflow-hidden">
+                  {speaker.profilePicture && (
+                    <div className="aspect-w-1 aspect-h-1 bg-gray-200">
+                      <Image
+                        src={speaker.profilePicture}
+                        alt={speaker.fullName}
+                        width={300}
+                        height={300}
+                        className="w-full h-64 object-cover"
+                      />
+                    </div>
+                  )}
+                  <div className="p-6">
+                    <h3 className="text-xl font-bold text-gray-900 mb-2">
+                      {speaker.fullName}
+                    </h3>
+                    {speaker.tagLine && (
+                      <p className="text-blue-600 font-medium mb-3">
+                        {speaker.tagLine}
+                      </p>
+                    )}
+                    <p className="text-gray-700 text-sm mb-4">
+                      {speaker.bio.length > 150 
+                        ? `${speaker.bio.substring(0, 150)}...` 
+                        : speaker.bio
+                      }
+                    </p>
+                    {speaker.links.length > 0 && (
+                      <div className="flex space-x-3">
+                        {speaker.links.map((link, index) => (
+                          <a
+                            key={index}
+                            href={link.url}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="text-blue-600 hover:text-blue-800 text-sm"
+                          >
+                            {link.title}
+                          </a>
+                        ))}
+                      </div>
+                    )}
+                  </div>
+                </div>
+              ))}
+            </div>
+          </div>
+        </section>
+      )}
 
       {/* Call for Papers */}
       <section className="py-16 bg-gray-100">

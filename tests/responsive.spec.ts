@@ -5,7 +5,10 @@ test.describe('Responsive Design Tests', () => {
     { name: 'Homepage', url: '/' },
     { name: 'Team Page', url: '/team' },
     { name: 'Volunteers Page', url: '/volunteers' },
-    { name: 'Code of Conduct', url: '/code-of-conduct' }
+    { name: 'Code of Conduct', url: '/code-of-conduct' },
+    { name: 'CTF Page', url: '/ctf' },
+    { name: 'Speakers Page', url: '/speakers' },
+    { name: 'Agenda Page', url: '/agenda' }
   ];
 
   test.describe('Desktop View (1920x1080)', () => {
@@ -105,6 +108,50 @@ test.describe('Responsive Design Tests', () => {
         await page.screenshot({ path: `tests/screenshots/tablet-${pageInfo.name.toLowerCase().replace(/\s+/g, '-')}.png`, fullPage: true });
       });
     }
+  });
+
+  test.describe('CTF Page Specific Tests', () => {
+    test('CTF page should display all historical winners on desktop', async ({ page }) => {
+      await page.setViewportSize({ width: 1920, height: 1080 });
+      await page.goto('/ctf');
+      
+      // Check main heading
+      const heading = page.locator('h1:has-text("Capture The Flag")');
+      await expect(heading).toBeVisible();
+      
+      // Check 2024 winners section
+      const winners2024 = page.locator('text=BSidesTLV 2024 CTF Winners');
+      await expect(winners2024).toBeVisible();
+      
+      // Check specific winner (TeamIL)
+      const teamIL = page.locator('text=TeamIL');
+      await expect(teamIL).toBeVisible();
+      
+      // Check challenge categories
+      const categories = page.locator('text=Challenge Categories');
+      await expect(categories).toBeVisible();
+      
+      // Check practice resources
+      const practiceSection = page.locator('text=Practice for CTF 2025');
+      await expect(practiceSection).toBeVisible();
+    });
+
+    test('CTF page should be mobile responsive', async ({ page }) => {
+      await page.setViewportSize({ width: 375, height: 667 });
+      await page.goto('/ctf');
+      
+      // Check main elements are still visible on mobile
+      const heading = page.locator('h1:has-text("Capture The Flag")');
+      await expect(heading).toBeVisible();
+      
+      // Check historical results section is responsive
+      const winners2024 = page.locator('text=BSidesTLV 2024 CTF Winners');
+      await expect(winners2024).toBeVisible();
+      
+      // Check category grid adapts to mobile
+      const cryptographyCategory = page.locator('text=Cryptography');
+      await expect(cryptographyCategory).toBeVisible();
+    });
   });
 
   test.describe('Homepage Components Visibility', () => {

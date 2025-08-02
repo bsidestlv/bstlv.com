@@ -15,6 +15,7 @@ export default function Navigation() {
     { href: "/", label: "Home" },
     { href: "/speakers", label: "Speakers" },
     { href: "/agenda", label: "Agenda" },
+    { href: "/ctf", label: "CTF" },
     { href: "/sponsors", label: "Sponsors" },
     { href: "/team", label: "Team" },
     { href: "/cfp", label: "CFP" },

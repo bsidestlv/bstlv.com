@@ -13,6 +13,7 @@ test.describe('BSidesTLV Navigation', () => {
       { text: 'Home', href: '/' },
       { text: 'Speakers', href: '/speakers' },
       { text: 'Agenda', href: '/agenda' },
+      { text: 'CTF', href: '/ctf' },
       { text: 'Sponsors', href: '/sponsors' },
       { text: 'Team', href: '/team' },
       { text: 'CFP', href: '/cfp' }
@@ -58,6 +59,7 @@ test.describe('BSidesTLV Navigation', () => {
       { text: 'Home', href: '/' },
       { text: 'Speakers', href: '/speakers' },
       { text: 'Agenda', href: '/agenda' },
+      { text: 'CTF', href: '/ctf' },
       { text: 'Sponsors', href: '/sponsors' },
       { text: 'Team', href: '/team' },
       { text: 'CFP', href: '/cfp' }
