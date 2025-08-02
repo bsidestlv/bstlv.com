@@ -1,33 +1,9 @@
-import Image from 'next/image';
-import Link from 'next/link';
+import Navigation from '../components/Navigation';
 
 export default function CodeOfConductPage() {
   return (
     <div className="min-h-screen bg-gray-50">
-      {/* Header */}
-      <header className="bg-white shadow-sm">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4">
-          <div className="flex items-center justify-between">
-            <Link href="/">
-              <Image
-                src="/images/logos/bstlv_color.png"
-                alt="BSidesTLV 2025"
-                width={200}
-                height={60}
-                priority
-              />
-            </Link>
-            <nav className="hidden md:flex space-x-8">
-              <Link href="/" className="text-gray-700 hover:text-blue-600">Home</Link>
-              <Link href="/speakers" className="text-gray-700 hover:text-blue-600">Speakers</Link>
-              <Link href="/agenda" className="text-gray-700 hover:text-blue-600">Agenda</Link>
-              <Link href="/sponsors" className="text-gray-700 hover:text-blue-600">Sponsors</Link>
-              <Link href="/team" className="text-gray-700 hover:text-blue-600">Team</Link>
-              <Link href="/cfp" className="text-gray-700 hover:text-blue-600">CFP</Link>
-            </nav>
-          </div>
-        </div>
-      </header>
+      <Navigation />
 
       {/* Hero Section */}
       <section className="bg-gradient-to-r from-blue-600 to-purple-700 text-white py-16">
