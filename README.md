@@ -26,66 +26,54 @@ Official website for BSidesTLV 2025 cybersecurity conference, built with Next.js
 
 ## Quick Start
 
-1. Clone the repository
-2. Install dependencies:
+1. **Clone the repository**
+
+2. **Install dependencies:**
    ```bash
-   npm install
+   pnpm install
    ```
 
-3. Set up environment variables (optional):
+3. **Install Playwright browsers:**
    ```bash
-   cp .env.example .env.local
-   # Edit .env.local with your Sessionize event ID
+   pnpm exec playwright install
    ```
 
-4. Run the development server:
+4. **Set up environment variables (optional):**
    ```bash
-   npm run dev
+   # Create .env.local with your Sessionize event ID
+   SESSIONIZE_EVENT_ID=your_event_id_here
    ```
 
-5. Open [http://localhost:3000](http://localhost:3000) in your browser
+5. **Run the development server:**
+   ```bash
+   pnpm dev
+   ```
+
+6. **Open [http://localhost:3000](http://localhost:3000) in your browser**
+
+## Development
+
+**⚠️ IMPORTANT: Always bold and test everything before completing work!**
+
+See [DEVELOPMENT.md](./DEVELOPMENT.md) for comprehensive development guidelines, best practices, and troubleshooting.
+
+### Quick Development Checklist
+```bash
+# Before submitting any changes:
+pnpm lint     # ✅ Lint code
+pnpm build    # ✅ Build project  
+pnpm test     # ✅ Run all tests
+```
 
 ## Available Scripts
 
-- `npm run dev` - Start development server
-- `npm run build` - Build for production
-- `npm run start` - Start production server
-- `npm run lint` - Run ESLint
-- `npm test` - Run Playwright tests
-- `npm run test:headed` - Run tests with browser UI
-- `npm run test:debug` - Debug tests interactively
-
-## Testing
-
-The project includes comprehensive end-to-end tests using Playwright:
-
-```bash
-# Install browsers (first time only)
-npx playwright install
-
-# Run all tests
-npm test
-
-# Run specific test files
-npx playwright test tests/navigation.spec.ts
-npx playwright test tests/responsive.spec.ts
-```
-
-## Sessionize API Integration
-
-The website integrates with Sessionize for dynamic speaker and agenda content:
-
-1. Set your Sessionize event ID in `.env.local`:
-   ```
-   NEXT_PUBLIC_SESSIONIZE_EVENT_ID=your-event-id
-   ```
-
-2. The API automatically fetches:
-   - Speaker profiles and bios
-   - Session information and descriptions
-   - Event schedule and room assignments
-
-3. Fallback content is displayed when the API is unavailable
+- `pnpm dev` - Start development server
+- `pnpm build` - Build for production
+- `pnpm start` - Start production server
+- `pnpm lint` - Run ESLint
+- `pnpm test` - Run Playwright tests
+- `pnpm test:headed` - Run tests with browser UI
+- `pnpm test:debug` - Debug tests interactively
 
 ## Project Structure
 
@@ -103,51 +91,42 @@ The website integrates with Sessionize for dynamic speaker and agenda content:
 ├── lib/                  # Utility functions
 │   └── api/              # API integration (Sessionize)
 ├── tests/                # Playwright test files
-└── content/              # MDX content files
+└── mdx-components.tsx    # MDX component definitions
 ```
 
 ## Technologies Used
 
 - **Framework**: Next.js 15 with App Router
+- **Package Manager**: pnpm
 - **Styling**: Tailwind CSS
 - **Content**: MDX for maintainable content
 - **Testing**: Playwright for e2e testing
 - **API**: Sessionize integration for dynamic content
 - **TypeScript**: Full type safety
 
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+## Troubleshooting
 
-## Getting Started
-
-First, run the development server:
-
+### ERR_PNPM_OUTDATED_LOCKFILE
+If you encounter lockfile issues:
 ```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+rm package-lock.json              # Remove npm lockfile
+pnpm install --no-frozen-lockfile  # Update pnpm lockfile
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+### Missing Browsers for Testing
+```bash
+pnpm exec playwright install
+```
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+For more detailed troubleshooting, see [DEVELOPMENT.md](./DEVELOPMENT.md).
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+## Contributing
 
-## Learn More
+1. Follow the development guidelines in [DEVELOPMENT.md](./DEVELOPMENT.md)
+2. Always run the full test suite before submitting changes
+3. Ensure mobile responsiveness on all changes
+4. Test API integrations and fallback behavior
 
-To learn more about Next.js, take a look at the following resources:
+## License
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+This project is licensed under the MIT License.
