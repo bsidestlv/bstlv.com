@@ -7,7 +7,7 @@ interface CTFPageProps {
   params: Promise<{ year: string }>;
 }
 
-async function getCTFYearData(year: string) {
+function getCTFYearData(year: string) {
   const yearNum = parseInt(year);
   return ctfData.historicalResults.find(result => result.year === yearNum);
 }
