@@ -20,7 +20,7 @@ export async function generateStaticParams() {
 
 export default async function CTFYearPage({ params }: CTFPageProps) {
   const { year } = await params;
-  const yearData = await getCTFYearData(year);
+  const yearData = getCTFYearData(year);
 
   if (!yearData) {
     notFound();
