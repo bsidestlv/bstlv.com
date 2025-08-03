@@ -1,4 +1,5 @@
 import Navigation from "../components/Navigation";
+import Link from "next/link";
 
 export default function CTFPage() {
   return (
@@ -107,7 +108,15 @@ export default function CTFPage() {
           <div className="space-y-8">
             {/* 2024 Results */}
             <div className="bg-gradient-to-r from-yellow-50 to-orange-50 p-8 rounded-lg border border-yellow-200">
-              <h3 className="text-2xl font-bold text-gray-900 mb-6">🏆 BSidesTLV 2024 CTF Winners</h3>
+              <div className="flex justify-between items-start mb-6">
+                <h3 className="text-2xl font-bold text-gray-900">🏆 BSidesTLV 2024 CTF Winners</h3>
+                <Link 
+                  href="/ctf/2024"
+                  className="bg-blue-600 text-white px-4 py-2 rounded-lg text-sm hover:bg-blue-700 transition-colors"
+                >
+                  View Details →
+                </Link>
+              </div>
               <div className="grid md:grid-cols-3 gap-6">
                 <div className="text-center">
                   <div className="text-4xl mb-2">🥇</div>
@@ -137,7 +146,15 @@ export default function CTFPage() {
 
             {/* 2023 Results */}
             <div className="bg-gradient-to-r from-blue-50 to-purple-50 p-8 rounded-lg border border-blue-200">
-              <h3 className="text-2xl font-bold text-gray-900 mb-6">🏆 BSidesTLV 2023 CTF Winners</h3>
+              <div className="flex justify-between items-start mb-6">
+                <h3 className="text-2xl font-bold text-gray-900">🏆 BSidesTLV 2023 CTF Winners</h3>
+                <Link 
+                  href="/ctf/2023"
+                  className="bg-blue-600 text-white px-4 py-2 rounded-lg text-sm hover:bg-blue-700 transition-colors"
+                >
+                  View Details →
+                </Link>
+              </div>
               <div className="grid md:grid-cols-3 gap-6">
                 <div className="text-center">
                   <div className="text-4xl mb-2">🥇</div>
@@ -167,7 +184,15 @@ export default function CTFPage() {
 
             {/* 2022 Results */}
             <div className="bg-gradient-to-r from-green-50 to-teal-50 p-8 rounded-lg border border-green-200">
-              <h3 className="text-2xl font-bold text-gray-900 mb-6">🏆 BSidesTLV 2022 CTF Winners</h3>
+              <div className="flex justify-between items-start mb-6">
+                <h3 className="text-2xl font-bold text-gray-900">🏆 BSidesTLV 2022 CTF Winners</h3>
+                <Link 
+                  href="/ctf/2022"
+                  className="bg-blue-600 text-white px-4 py-2 rounded-lg text-sm hover:bg-blue-700 transition-colors"
+                >
+                  View Details →
+                </Link>
+              </div>
               <div className="grid md:grid-cols-3 gap-6">
                 <div className="text-center">
                   <div className="text-4xl mb-2">🥇</div>
@@ -193,6 +218,28 @@ export default function CTFPage() {
                   <strong>Participation:</strong> 75 teams • 220+ players • 16 challenges
                 </p>
               </div>
+            </div>
+
+            {/* Archive Section */}
+            <div className="bg-gray-50 p-8 rounded-lg border border-gray-200">
+              <h3 className="text-2xl font-bold text-gray-900 mb-6 text-center">📚 CTF Archive</h3>
+              <p className="text-center text-gray-700 mb-6">
+                Explore detailed results and information from previous years
+              </p>
+              <div className="flex flex-wrap justify-center gap-3">
+                <Link href="/ctf/2024" className="bg-white border border-gray-300 px-4 py-2 rounded-lg hover:bg-gray-50 transition-colors">2024</Link>
+                <Link href="/ctf/2023" className="bg-white border border-gray-300 px-4 py-2 rounded-lg hover:bg-gray-50 transition-colors">2023</Link>
+                <Link href="/ctf/2022" className="bg-white border border-gray-300 px-4 py-2 rounded-lg hover:bg-gray-50 transition-colors">2022</Link>
+                <span className="border border-gray-200 px-4 py-2 rounded-lg text-gray-400">2021</span>
+                <span className="border border-gray-200 px-4 py-2 rounded-lg text-gray-400">2020</span>
+                <span className="border border-gray-200 px-4 py-2 rounded-lg text-gray-400">2019</span>
+                <span className="border border-gray-200 px-4 py-2 rounded-lg text-gray-400">2018</span>
+                <span className="border border-gray-200 px-4 py-2 rounded-lg text-gray-400">2017</span>
+                <span className="border border-gray-200 px-4 py-2 rounded-lg text-gray-400">2016</span>
+              </div>
+              <p className="text-center text-sm text-gray-500 mt-4">
+                Earlier years coming soon - help us digitize the archives!
+              </p>
             </div>
           </div>
         </div>
