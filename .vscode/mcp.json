@@ -24,6 +24,12 @@
         "bsidestlv.com": {
             "type": "sse",
             "url": "https://gitmcp.io/bsidestlv/bsidestlv.com"
+        },
+        "playwright": {
+            "command": "npx",
+            "args": [
+                "@playwright/mcp@latest"
+            ]
         }
     },
 }
