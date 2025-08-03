@@ -1,8 +1,9 @@
 export interface TeamMember {
   title: string;
-  type: 'team' | 'cfpboard';
+  type: "team" | "cfpboard";
   subtitle?: string;
   key: string;
+  image?: string; // Optional profile image path
   socials?: {
     link: string;
     name: string;
@@ -13,18 +14,22 @@ export const teamMembers: TeamMember[] = [
   {
     title: "Elad Shuster",
     type: "team",
-    key: "elad_shuster"
+    key: "elad_shuster",
   },
   {
     title: "Guy Barnhart-Magen",
     type: "team",
     subtitle: "Profero, founder and CTO",
     key: "guy_bm",
+    image: "/images/team/guy_bm.svg",
     socials: [
       { link: "https://twitter.com/barnhartguy", name: "Twitter" },
-      { link: "https://www.linkedin.com/in/guy-barnhart-magen", name: "LinkedIn" },
-      { link: "https://productsecurity.info", name: "Site" }
-    ]
+      {
+        link: "https://www.linkedin.com/in/guy-barnhart-magen",
+        name: "LinkedIn",
+      },
+      { link: "https://productsecurity.info", name: "Site" },
+    ],
   },
   {
     title: "Irena Damsky",
@@ -33,73 +38,81 @@ export const teamMembers: TeamMember[] = [
     socials: [
       { link: "https://twitter.com/DmaskyIrena", name: "Twitter" },
       { link: "http://damsky.tech", name: "Site" },
-      { link: "https://www.linkedin.com/in/irenadam", name: "LinkedIn" }
-    ]
+      { link: "https://www.linkedin.com/in/irenadam", name: "LinkedIn" },
+    ],
   },
   {
     title: "Inbar Raz",
     type: "team",
     subtitle: "CEO, Unarmed Security | Hacker of Things.",
     key: "inbar_raz",
+    image: "/images/team/inbar_raz.svg",
     socials: [
       { link: "https://twitter.com/inbarraz", name: "Twitter" },
-      { link: "https://www.linkedin.com/in/inbarraz/", name: "LinkedIn" }
-    ]
+      { link: "https://www.linkedin.com/in/inbarraz/", name: "LinkedIn" },
+    ],
   },
   {
     title: "Keren Elazari",
     type: "team",
     subtitle: "Hack The Planet | Founder, BSidesTLV & Leading Cyber Ladies",
     key: "keren_elazari",
+    image: "/images/team/keren_elazari.svg",
     socials: [
       { link: "https://twitter.com/k3r3n3", name: "Twitter" },
       { link: "http://www.k3r3n3.com/", name: "Site" },
-      { link: "https://www.linkedin.com/in/kerene", name: "LinkedIn" }
-    ]
+      { link: "https://www.linkedin.com/in/kerene", name: "LinkedIn" },
+    ],
   },
   {
     title: "Omer Cohen",
     type: "team",
     subtitle: "CSO, Descope",
     key: "omer_cohen",
+    image: "/images/team/omer_cohen.svg",
     socials: [
       { link: "https://www.twitter.com/omercnet", name: "Twitter" },
       { link: "http://omer.cohen.io/", name: "Site" },
       { link: "https://www.linkedin.com/in/omercohen", name: "LinkedIn" },
-      { link: "https://github.com/omercnet", name: "Github" }
-    ]
+      { link: "https://github.com/omercnet", name: "Github" },
+    ],
   },
   {
     title: "Reut Menashe",
     type: "team",
-    subtitle: "CEO, Tetrisponse.io | Co-Leader, Leading Cyber Ladies | BSidesTLV Producer",
+    subtitle:
+      "CEO, Tetrisponse.io | Co-Leader, Leading Cyber Ladies | BSidesTLV Producer",
     key: "reut_menashe",
     socials: [
       { link: "https://www.reut-menashe.com/", name: "Site" },
       { link: "https://twitter.com/Reutooo_", name: "Twitter" },
       { link: "https://wwww.linkedin.com/in/reutmenashe", name: "LinkedIn" },
-      { link: "https://leadingcyberladies.com/", name: "Site" }
-    ]
+      { link: "https://leadingcyberladies.com/", name: "Site" },
+    ],
   },
   {
     title: "Roei Sherman",
     type: "team",
     subtitle: "Not how many, but where.",
     key: "RS",
+    image: "/images/team/RS.svg",
     socials: [
       { link: "https://twitter.com/x_Freed0m", name: "Twitter" },
       { link: "http://betheadversary.com/", name: "Site" },
       { link: "https://www.linkedin.com/in/freed0m/", name: "LinkedIn" },
-      { link: "https://github.com/xfreed0m", name: "Github" }
-    ]
+      { link: "https://github.com/xfreed0m", name: "Github" },
+    ],
   },
   {
     title: "Inbal Pearlson",
     type: "team",
     key: "inbal",
     socials: [
-      { link: "https://www.linkedin.com/in/inbal-pearlson-91709730/", name: "Linkdin" }
-    ]
+      {
+        link: "https://www.linkedin.com/in/inbal-pearlson-91709730/",
+        name: "Linkdin",
+      },
+    ],
   },
   {
     title: "Eden Katz",
@@ -108,39 +121,39 @@ export const teamMembers: TeamMember[] = [
     key: "eden_katz",
     socials: [
       { link: "https://www.linkedin.com/in/edenkatz5", name: "LinkedIn" },
-      { link: "https://x.com/wwcyber", name: "Twitter" }
-    ]
+      { link: "https://x.com/wwcyber", name: "Twitter" },
+    ],
   },
   {
     title: "Guy Halfon",
     type: "team",
     key: "guy_halfon",
-    socials: []
+    socials: [],
   },
   {
     title: "Nofar Terenyo",
     type: "team",
     key: "nofar_terenyo",
-    socials: []
+    socials: [],
   },
   {
     title: "Lavie Ben-Baruch",
     type: "team",
     key: "lavie_ben_baruch",
-    socials: []
+    socials: [],
   },
   {
     title: "Benny Meisels",
     type: "team",
     key: "benny_meisels1",
-    socials: []
+    socials: [],
   },
   {
     title: "Michal Kamensky",
     type: "team",
     key: "michal_kamensky",
-    socials: []
-  }
+    socials: [],
+  },
 ];
 
 export const cfpBoardMembers: TeamMember[] = [
@@ -150,9 +163,12 @@ export const cfpBoardMembers: TeamMember[] = [
     subtitle: "X-Force Cyber Crisis Management, Global Lead at IBM",
     key: "limor_kessem",
     socials: [
-      { link: "https://www.linkedin.com/in/limor-sylvie-kessem/", name: "LinkedIn" },
-      { link: "https://twitter.com/iCyberFighter", name: "Twitter" }
-    ]
+      {
+        link: "https://www.linkedin.com/in/limor-sylvie-kessem/",
+        name: "LinkedIn",
+      },
+      { link: "https://twitter.com/iCyberFighter", name: "Twitter" },
+    ],
   },
   {
     title: "Marion Marschalek",
@@ -160,8 +176,11 @@ export const cfpBoardMembers: TeamMember[] = [
     subtitle: "Founder, BlackHoodie women RE workshop",
     key: "marion_marschalek",
     socials: [
-      { link: "https://www.linkedin.com/in/marion-marschalek-06b79642/", name: "LinkedIn" }
-    ]
+      {
+        link: "https://www.linkedin.com/in/marion-marschalek-06b79642/",
+        name: "LinkedIn",
+      },
+    ],
   },
   {
     title: "Migo Kedem",
@@ -169,8 +188,8 @@ export const cfpBoardMembers: TeamMember[] = [
     subtitle: "VP, Office of the CEO & Strategic Initiatives at CrowdStrike",
     key: "migo_kedem",
     socials: [
-      { link: "https://www.linkedin.com/in/migokedem/", name: "LinkedIn" }
-    ]
+      { link: "https://www.linkedin.com/in/migokedem/", name: "LinkedIn" },
+    ],
   },
   {
     title: "Ohad Zaidenberg",
@@ -178,9 +197,12 @@ export const cfpBoardMembers: TeamMember[] = [
     subtitle: "Strategic Threat Intelligence Leader | CTI Researcher",
     key: "ohad_zaidenberg",
     socials: [
-      { link: "https://www.linkedin.com/in/ohad-zaidenberg/", name: "LinkedIn" },
-      { link: "https://twitter.com/ohad_mz", name: "Twitter" }
-    ]
+      {
+        link: "https://www.linkedin.com/in/ohad-zaidenberg/",
+        name: "LinkedIn",
+      },
+      { link: "https://twitter.com/ohad_mz", name: "Twitter" },
+    ],
   },
   {
     title: "Noy Pearl",
@@ -188,8 +210,11 @@ export const cfpBoardMembers: TeamMember[] = [
     subtitle: "Security Researcher at Planet Nine",
     key: "noy_pearl",
     socials: [
-      { link: "https://www.linkedin.com/in/noy-pearl-419812188/", name: "LinkedIn" }
-    ]
+      {
+        link: "https://www.linkedin.com/in/noy-pearl-419812188/",
+        name: "LinkedIn",
+      },
+    ],
   },
   {
     title: "Sharon Brizinov",
@@ -197,8 +222,8 @@ export const cfpBoardMembers: TeamMember[] = [
     subtitle: "Director of Research at Claroty",
     key: "sharon_brizinov",
     socials: [
-      { link: "https://www.linkedin.com/in/sharonbrizinov/", name: "LinkedIn" }
-    ]
+      { link: "https://www.linkedin.com/in/sharonbrizinov/", name: "LinkedIn" },
+    ],
   },
   {
     title: "Ilil Blum Shem-Tov",
@@ -206,8 +231,11 @@ export const cfpBoardMembers: TeamMember[] = [
     subtitle: "Security Research Team Manager at Intel",
     key: "ilil_blum",
     socials: [
-      { link: "https://www.linkedin.com/in/ilil-blum-shem-tov-ph-d-aa5a4321/", name: "LinkedIn" }
-    ]
+      {
+        link: "https://www.linkedin.com/in/ilil-blum-shem-tov-ph-d-aa5a4321/",
+        name: "LinkedIn",
+      },
+    ],
   },
   {
     title: "Gal Bitensky",
@@ -215,8 +243,8 @@ export const cfpBoardMembers: TeamMember[] = [
     subtitle: "Principal Security Researcher at Palo Alto Networks",
     key: "gal_bitensky",
     socials: [
-      { link: "https://www.linkedin.com/in/gal-bitensky/", name: "LinkedIn" }
-    ]
+      { link: "https://www.linkedin.com/in/gal-bitensky/", name: "LinkedIn" },
+    ],
   },
   {
     title: "Yossi Sassi",
@@ -224,7 +252,7 @@ export const cfpBoardMembers: TeamMember[] = [
     subtitle: "Co-Founder, Chief Security Architect at Ten Root Cyber Security",
     key: "yossi_sassi",
     socials: [
-      { link: "https://www.linkedin.com/in/yossisassi/", name: "LinkedIn" }
-    ]
-  }
+      { link: "https://www.linkedin.com/in/yossisassi/", name: "LinkedIn" },
+    ],
+  },
 ];

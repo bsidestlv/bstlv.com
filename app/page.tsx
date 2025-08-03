@@ -1,4 +1,3 @@
-import Image from "next/image";
 import Link from "next/link";
 import Navigation from "./components/Navigation";
 
@@ -16,34 +15,53 @@ export default function Home() {
           <p className="text-xl md:text-2xl mb-8">
             Comic Book Multiverse Edition - Everything is Possible
           </p>
-          <div className="bg-red-100 border border-red-400 text-red-700 px-4 py-3 rounded-lg max-w-4xl mx-auto mb-8">
-            <h2 className="text-2xl font-bold mb-4">📢 BSidesTLV 2025 – Postponed</h2>
+          <div className="bg-green-100 border border-green-400 text-green-700 px-4 py-3 rounded-lg max-w-4xl mx-auto mb-8">
+            <h2 className="text-2xl font-bold mb-4">📢 BSidesTLV 2025 - new date announcement, 11.12.2025</h2>
+            <h3 className="text-lg font-semibold mb-3">📢 Greetings Hackers & earthlings!</h3>
             <p className="mb-4">
-              Due to the ongoing war and the postponement of Cyber Week by Tel Aviv University, 
-              we&apos;ve made the difficult but necessary decision to postpone BSidesTLV 2025.
+              Following the June 2025 postponement, we have an update about our new expected date:
+              Tel Aviv University Cyber Week 2025 Will Take Place December 8-11. This means that our BSidesTLV2025 event is scheduled for December 11, Thursday!
             </p>
             <p className="mb-4">
-              All tickets remain valid for our event, to be held at a future date. 
-              We&apos;re currently reviewing next steps regarding tshirts, badges and more.
+              Most of our planned agenda and village content remain the same, and any current tickets will be valid for the new date.
             </p>
-            <p>
-              Meanwhile, our hearts go out to everyone affected, and especially to those 
-              bravely serving on the front lines. 💙
+            <p className="mb-4">
+              We will be in touch in September with event updates, info about electronic badges and more surprises.
+            </p>
+            <p className="mb-4">
+              We hope to see everyone there, and we thank you for your continued support!
+              The BSidesTLV 2025 team
+            </p>
+            <p className="mb-4">
+              The theme for our 10th security research community conference will focus on alternate realities and multiple possibilities, imagining a better future while living in a chaotic present! In the age of disinformation, GenAI and Quantum Computers - we believe everything is possible (at least in the realm of security research🤓).
+            </p>
+            <p className="mb-4">
+              Have an idea to share on our main stage? Join our local celebration of security research, creativity, and resilience. We welcome first time speakers and offer speaker mentoring and might be able to offer travel support for international (or interdimensional) speakers!
+            </p>
+            <p className="font-semibold">
+              TLDR: The security multiverse needs heroes, so join us at BSidesTLV 2025, December 11! Call for Volunteers is now open! <a href="https://signup.com/go/XWAtoJV" className="text-blue-600 hover:text-blue-800 underline" target="_blank" rel="noopener noreferrer">Wanna help?</a>
             </p>
           </div>
         </div>
       </section>
 
-      {/* Postponement Banner */}
+      {/* Event Details Section */}
       <section className="py-12 bg-white">
-        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <Image
-            src="/images/logos/bstlv25_postpone.png"
-            alt="BSidesTLV 2025 Postponed"
-            width={600}
-            height={400}
-            className="mx-auto rounded-lg shadow-lg"
-          />
+        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+          <h2 className="text-3xl font-bold text-gray-900 text-center mb-8">Important Dates and Details</h2>
+          <div className="bg-gray-50 p-6 rounded-lg">
+            <ul className="space-y-3 text-gray-700">
+              <li><strong>CFP Opens:</strong> 16/2/2025 at 10:00:00 Israel time</li>
+              <li><strong>CFP Closes:</strong> 15/4/2025 at 23:59:59 Israel time</li>
+              <li><strong>CFP decisions:</strong> will be sent to submitters by 5/5/2025</li>
+              <li><strong>Agenda announced:</strong> by 20/5/2025</li>
+              <li><strong>Ticket sales, T-shirt orders & registration:</strong> will open during May 2025</li>
+              <li><strong>BSidesTLV 2025:</strong> December 11, 2025 from 9am to 6pm</li>
+              <li><strong>Location:</strong> Live & in person at Tel Aviv University during Tel Aviv Cyber Week, in Smolarz auditorium</li>
+              <li><strong>Features:</strong> Main stage with live talks, networking and chillout areas, dedicated sponsor zone, and unique villages focusing on hardware hacking, bug bounty programs and more!</li>
+              <li><strong>Language:</strong> All talks presented in English, filmed and uploaded to YouTube after the event</li>
+            </ul>
+          </div>
         </div>
       </section>
 
