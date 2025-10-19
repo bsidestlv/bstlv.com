@@ -38,7 +38,7 @@ test.describe("Team Page Randomization", () => {
     }
 
     // Verify no hydration errors in console
-    const logs = [];
+    const logs: string[] = [];
     page.on("console", (msg) => {
       if (msg.type() === "error") {
         logs.push(msg.text());
