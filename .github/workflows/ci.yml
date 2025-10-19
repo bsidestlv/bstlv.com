@@ -25,10 +25,7 @@ jobs:
             - name: Install pnpm
               uses: pnpm/action-setup@v4
               with:
-                  version: "10.13.1"
-
-            - name: Install dependencies
-              run: pnpm install --frozen-lockfile
+                  run_install: true
 
             - name: Lint code
               run: pnpm lint
@@ -67,9 +64,8 @@ jobs:
 
             - name: Install pnpm
               uses: pnpm/action-setup@v4
-
-            - name: Install dependencies
-              run: pnpm install --frozen-lockfile
+              with:
+                  run_install: true
 
             - name: Run security audit
               run: pnpm audit --audit-level moderate
