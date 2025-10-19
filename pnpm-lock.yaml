@@ -32,6 +32,9 @@ importers:
       remark-gfm:
         specifier: ^4.0.1
         version: 4.0.1
+      remark-lint:
+        specifier: ^10.0.1
+        version: 10.0.1
     devDependencies:
       '@eslint/compat':
         specifier: ^1.4.0
@@ -87,9 +90,6 @@ importers:
       prettier-plugin-tailwindcss:
         specifier: ^0.7.1
         version: 0.7.1(prettier@3.6.2)
-      remark-lint:
-        specifier: ^10.0.1
-        version: 10.0.1
       remark-preset-prettier:
         specifier: ^2.0.2
         version: 2.0.2(prettier@3.6.2)
