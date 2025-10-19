@@ -13,39 +13,47 @@ interface FeatureCardsProps {
   columns?: number;
 }
 
-export default function FeatureCards({ 
-  title, 
-  subtitle, 
-  cards, 
+export default function FeatureCards({
+  title,
+  subtitle,
+  cards,
   backgroundClass = "bg-white",
-  columns = 3 
+  columns = 3,
 }: FeatureCardsProps) {
-  const gridCols = columns === 4 ? "lg:grid-cols-4" : columns === 2 ? "md:grid-cols-2" : "md:grid-cols-3";
-  
+  const gridCols =
+    columns === 4
+      ? "lg:grid-cols-4"
+      : columns === 2
+        ? "md:grid-cols-2"
+        : "md:grid-cols-3";
+
   return (
     <section className={`py-16 ${backgroundClass}`}>
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="text-center mb-12">
-          <h2 className="text-3xl font-bold text-gray-900 mb-4">
-            {title}
-          </h2>
+      <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+        <div className="mb-12 text-center">
+          <h2 className="mb-4 text-3xl font-bold text-gray-900">{title}</h2>
           {subtitle && (
-            <p className="text-xl text-gray-600 max-w-3xl mx-auto">
+            <p className="mx-auto max-w-3xl text-xl text-gray-600">
               {subtitle}
             </p>
           )}
         </div>
-        
+
         <div className={`grid grid-cols-1 ${gridCols} gap-8`}>
           {cards.map((card, index) => (
-            <div key={index} className={`text-center p-6 ${card.bgColor || ''}`}>
+            <div
+              key={index}
+              className={`p-6 text-center ${card.bgColor || ""}`}
+            >
               {card.icon && (
-                <div className="w-16 h-16 bg-gray-100 rounded-full flex items-center justify-center mx-auto mb-4">
+                <div className="mx-auto mb-4 flex h-16 w-16 items-center justify-center rounded-full bg-gray-100">
                   <span className="text-2xl">{card.icon}</span>
                 </div>
               )}
-              <h3 className="text-xl font-semibold text-gray-900 mb-3">{card.title}</h3>
-              <p className="text-gray-600 text-sm">{card.description}</p>
+              <h3 className="mb-3 text-xl font-semibold text-gray-900">
+                {card.title}
+              </h3>
+              <p className="text-sm text-gray-600">{card.description}</p>
             </div>
           ))}
         </div>

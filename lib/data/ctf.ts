@@ -38,23 +38,23 @@ export const ctfData: CTFInfo = {
     {
       name: "Cryptography",
       icon: "🔐",
-      description: "Encryption, hashing, protocols"
+      description: "Encryption, hashing, protocols",
     },
     {
-      name: "Web Security", 
+      name: "Web Security",
       icon: "🌐",
-      description: "XSS, SQLi, CSRF, logic flaws"
+      description: "XSS, SQLi, CSRF, logic flaws",
     },
     {
       name: "Binary",
-      icon: "💻", 
-      description: "Reverse engineering, pwn"
+      icon: "💻",
+      description: "Reverse engineering, pwn",
     },
     {
       name: "Forensics",
       icon: "🕵️",
-      description: "Digital investigation, OSINT"
-    }
+      description: "Digital investigation, OSINT",
+    },
   ],
   historicalResults: [
     {
@@ -62,33 +62,33 @@ export const ctfData: CTFInfo = {
       winners: [
         { place: 1, teamName: "TeamIL", points: 4250 },
         { place: 2, teamName: "Cyber_Guardians", points: 3890 },
-        { place: 3, teamName: "H4ckTheW0rld", points: 3650 }
+        { place: 3, teamName: "H4ckTheW0rld", points: 3650 },
       ],
       totalTeams: 127,
       totalPlayers: 340,
-      totalChallenges: 22
+      totalChallenges: 22,
     },
     {
       year: 2023,
       winners: [
         { place: 1, teamName: "SecMasters", points: 3980 },
         { place: 2, teamName: "ByteHunters", points: 3720 },
-        { place: 3, teamName: "CyberNinjas", points: 3450 }
+        { place: 3, teamName: "CyberNinjas", points: 3450 },
       ],
       totalTeams: 98,
       totalPlayers: 280,
-      totalChallenges: 18
+      totalChallenges: 18,
     },
     {
       year: 2022,
       winners: [
         { place: 1, teamName: "EliteHackers", points: 3650 },
         { place: 2, teamName: "SecureTeam", points: 3420 },
-        { place: 3, teamName: "DataDiggers", points: 3180 }
+        { place: 3, teamName: "DataDiggers", points: 3180 },
       ],
       totalTeams: 75,
       totalPlayers: 220,
-      totalChallenges: 16
-    }
-  ]
+      totalChallenges: 16,
+    },
+  ],
 };

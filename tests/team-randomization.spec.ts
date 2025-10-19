@@ -1,4 +1,4 @@
-import { test, expect } from "@playwright/test";
+import { expect, test } from "@playwright/test";
 
 test.describe("Team Page Randomization", () => {
   test("should render team members without visual glitches on page load", async ({
@@ -15,7 +15,7 @@ test.describe("Team Page Randomization", () => {
 
     // Check that team member cards are visible
     await expect(page.locator(".bg-white.rounded-lg.shadow-md")).toHaveCount(
-      24
+      24,
     );
 
     // Verify that all team member images or initials are displayed
@@ -38,7 +38,7 @@ test.describe("Team Page Randomization", () => {
     }
 
     // Verify no hydration errors in console
-    const logs = [];
+    const logs: string[] = [];
     page.on("console", (msg) => {
       if (msg.type() === "error") {
         logs.push(msg.text());
@@ -54,7 +54,7 @@ test.describe("Team Page Randomization", () => {
       (log) =>
         log.includes("hydration") ||
         log.includes("Hydration") ||
-        log.includes("server and client")
+        log.includes("server and client"),
     );
 
     expect(hydrationErrors).toHaveLength(0);

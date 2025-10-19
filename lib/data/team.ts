@@ -1,5 +1,5 @@
 export interface TeamMember {
-  title: string;
+  name: string;
   type: "team" | "cfpboard";
   subtitle?: string;
   key: string;
@@ -12,16 +12,16 @@ export interface TeamMember {
 
 export const teamMembers: TeamMember[] = [
   {
-    title: "Elad Shuster",
+    name: "Elad Shuster",
     type: "team",
     key: "elad_shuster",
   },
   {
-    title: "Guy Barnhart-Magen",
+    name: "Guy Barnhart-Magen",
     type: "team",
     subtitle: "Profero, founder and CTO",
     key: "guy_bm",
-    image: "/images/team/guy_bm.svg",
+    image: "/images/team/guy_bm.jpg",
     socials: [
       { link: "https://twitter.com/barnhartguy", name: "Twitter" },
       {
@@ -32,7 +32,7 @@ export const teamMembers: TeamMember[] = [
     ],
   },
   {
-    title: "Irena Damsky",
+    name: "Irena Damsky",
     type: "team",
     key: "ID",
     socials: [
@@ -42,22 +42,22 @@ export const teamMembers: TeamMember[] = [
     ],
   },
   {
-    title: "Inbar Raz",
+    name: "Inbar Raz",
     type: "team",
     subtitle: "CEO, Unarmed Security | Hacker of Things.",
     key: "inbar_raz",
-    image: "/images/team/inbar_raz.svg",
+    image: "/images/team/inbar_raz.jpg",
     socials: [
       { link: "https://twitter.com/inbarraz", name: "Twitter" },
       { link: "https://www.linkedin.com/in/inbarraz/", name: "LinkedIn" },
     ],
   },
   {
-    title: "Keren Elazari",
+    name: "Keren Elazari",
     type: "team",
     subtitle: "Hack The Planet | Founder, BSidesTLV & Leading Cyber Ladies",
     key: "keren_elazari",
-    image: "/images/team/keren_elazari.svg",
+    image: "/images/team/keren_elazari.jpg",
     socials: [
       { link: "https://twitter.com/k3r3n3", name: "Twitter" },
       { link: "http://www.k3r3n3.com/", name: "Site" },
@@ -65,11 +65,11 @@ export const teamMembers: TeamMember[] = [
     ],
   },
   {
-    title: "Omer Cohen",
+    name: "Omer Cohen",
     type: "team",
     subtitle: "CSO, Descope",
     key: "omer_cohen",
-    image: "/images/team/omer_cohen.svg",
+    image: "/images/team/omer_cohen.jpg",
     socials: [
       { link: "https://www.twitter.com/omercnet", name: "Twitter" },
       { link: "http://omer.cohen.io/", name: "Site" },
@@ -78,7 +78,7 @@ export const teamMembers: TeamMember[] = [
     ],
   },
   {
-    title: "Reut Menashe",
+    name: "Reut Menashe",
     type: "team",
     subtitle:
       "CEO, Tetrisponse.io | Co-Leader, Leading Cyber Ladies | BSidesTLV Producer",
@@ -91,11 +91,11 @@ export const teamMembers: TeamMember[] = [
     ],
   },
   {
-    title: "Roei Sherman",
+    name: "Roei Sherman",
     type: "team",
     subtitle: "Not how many, but where.",
     key: "RS",
-    image: "/images/team/RS.svg",
+    image: "/images/team/RS.jpg",
     socials: [
       { link: "https://twitter.com/x_Freed0m", name: "Twitter" },
       { link: "http://betheadversary.com/", name: "Site" },
@@ -104,7 +104,7 @@ export const teamMembers: TeamMember[] = [
     ],
   },
   {
-    title: "Inbal Pearlson",
+    name: "Inbal Pearlson",
     type: "team",
     key: "inbal",
     socials: [
@@ -115,7 +115,7 @@ export const teamMembers: TeamMember[] = [
     ],
   },
   {
-    title: "Eden Katz",
+    name: "Eden Katz",
     type: "team",
     subtitle: "Security Researcher, GenAI Security Tech Lead",
     key: "eden_katz",
@@ -125,31 +125,31 @@ export const teamMembers: TeamMember[] = [
     ],
   },
   {
-    title: "Guy Halfon",
+    name: "Guy Halfon",
     type: "team",
     key: "guy_halfon",
     socials: [],
   },
   {
-    title: "Nofar Terenyo",
+    name: "Nofar Terenyo",
     type: "team",
     key: "nofar_terenyo",
     socials: [],
   },
   {
-    title: "Lavie Ben-Baruch",
+    name: "Lavie Ben-Baruch",
     type: "team",
     key: "lavie_ben_baruch",
     socials: [],
   },
   {
-    title: "Benny Meisels",
+    name: "Benny Meisels",
     type: "team",
     key: "benny_meisels1",
     socials: [],
   },
   {
-    title: "Michal Kamensky",
+    name: "Michal Kamensky",
     type: "team",
     key: "michal_kamensky",
     socials: [],
@@ -158,7 +158,7 @@ export const teamMembers: TeamMember[] = [
 
 export const cfpBoardMembers: TeamMember[] = [
   {
-    title: "Limor Kessem",
+    name: "Limor Kessem",
     type: "cfpboard",
     subtitle: "X-Force Cyber Crisis Management, Global Lead at IBM",
     key: "limor_kessem",
@@ -171,7 +171,7 @@ export const cfpBoardMembers: TeamMember[] = [
     ],
   },
   {
-    title: "Marion Marschalek",
+    name: "Marion Marschalek",
     type: "cfpboard",
     subtitle: "Founder, BlackHoodie women RE workshop",
     key: "marion_marschalek",
@@ -183,7 +183,7 @@ export const cfpBoardMembers: TeamMember[] = [
     ],
   },
   {
-    title: "Migo Kedem",
+    name: "Migo Kedem",
     type: "cfpboard",
     subtitle: "VP, Office of the CEO & Strategic Initiatives at CrowdStrike",
     key: "migo_kedem",
@@ -192,7 +192,7 @@ export const cfpBoardMembers: TeamMember[] = [
     ],
   },
   {
-    title: "Ohad Zaidenberg",
+    name: "Ohad Zaidenberg",
     type: "cfpboard",
     subtitle: "Strategic Threat Intelligence Leader | CTI Researcher",
     key: "ohad_zaidenberg",
@@ -205,7 +205,7 @@ export const cfpBoardMembers: TeamMember[] = [
     ],
   },
   {
-    title: "Noy Pearl",
+    name: "Noy Pearl",
     type: "cfpboard",
     subtitle: "Security Researcher at Planet Nine",
     key: "noy_pearl",
@@ -217,7 +217,7 @@ export const cfpBoardMembers: TeamMember[] = [
     ],
   },
   {
-    title: "Sharon Brizinov",
+    name: "Sharon Brizinov",
     type: "cfpboard",
     subtitle: "Director of Research at Claroty",
     key: "sharon_brizinov",
@@ -226,7 +226,7 @@ export const cfpBoardMembers: TeamMember[] = [
     ],
   },
   {
-    title: "Ilil Blum Shem-Tov",
+    name: "Ilil Blum Shem-Tov",
     type: "cfpboard",
     subtitle: "Security Research Team Manager at Intel",
     key: "ilil_blum",
@@ -238,7 +238,7 @@ export const cfpBoardMembers: TeamMember[] = [
     ],
   },
   {
-    title: "Gal Bitensky",
+    name: "Gal Bitensky",
     type: "cfpboard",
     subtitle: "Principal Security Researcher at Palo Alto Networks",
     key: "gal_bitensky",
@@ -247,7 +247,7 @@ export const cfpBoardMembers: TeamMember[] = [
     ],
   },
   {
-    title: "Yossi Sassi",
+    name: "Yossi Sassi",
     type: "cfpboard",
     subtitle: "Co-Founder, Chief Security Architect at Ten Root Cyber Security",
     key: "yossi_sassi",
