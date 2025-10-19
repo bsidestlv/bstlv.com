@@ -33,7 +33,7 @@ jobs:
         run: pnpm build
 
       - name: Install Playwright browsers
-        run: pnpm exec playwright install --with-deps
+        run: pnpm exec playwright install --with-deps --only-shell
 
       - name: Run Playwright tests
         run: pnpm test
