@@ -1,64 +1,56 @@
-import { type MDXComponents } from 'mdx/types';
+import { type MDXComponents } from "mdx/types";
 
 export function useMDXComponents(components: MDXComponents): MDXComponents {
   return {
     h1: ({ children }) => (
-      <h1 className="text-4xl md:text-6xl font-bold mb-6 text-center">
+      <h1 className="mb-6 text-center text-4xl font-bold md:text-6xl">
         {children}
       </h1>
     ),
     h2: ({ children }) => (
-      <h2 className="text-3xl font-bold text-gray-900 mb-8 text-center">
+      <h2 className="mb-8 text-center text-3xl font-bold text-gray-900">
         {children}
       </h2>
     ),
     h3: ({ children }) => (
-      <h3 className="text-2xl font-bold text-gray-900 mb-6">
-        {children}
-      </h3>
+      <h3 className="mb-6 text-2xl font-bold text-gray-900">{children}</h3>
     ),
     p: ({ children }) => (
-      <p className="text-lg text-gray-700 mb-6">
-        {children}
-      </p>
+      <p className="mb-6 text-lg text-gray-700">{children}</p>
     ),
     ul: ({ children }) => (
-      <ul className="list-disc list-inside text-gray-700 mb-6 space-y-2">
+      <ul className="mb-6 list-inside list-disc space-y-2 text-gray-700">
         {children}
       </ul>
     ),
     ol: ({ children }) => (
-      <ol className="list-decimal list-inside text-gray-700 mb-6 space-y-2">
+      <ol className="mb-6 list-inside list-decimal space-y-2 text-gray-700">
         {children}
       </ol>
     ),
-    li: ({ children }) => (
-      <li className="text-gray-700">
-        {children}
-      </li>
-    ),
+    li: ({ children }) => <li className="text-gray-700">{children}</li>,
     a: ({ children, href }) => (
-      <a 
-        href={href} 
-        className="text-blue-600 hover:text-blue-800 underline"
-        target={href?.startsWith('http') ? '_blank' : undefined}
-        rel={href?.startsWith('http') ? 'noopener noreferrer' : undefined}
+      <a
+        href={href}
+        className="text-blue-600 underline hover:text-blue-800"
+        target={href?.startsWith("http") ? "_blank" : undefined}
+        rel={href?.startsWith("http") ? "noopener noreferrer" : undefined}
       >
         {children}
       </a>
     ),
     blockquote: ({ children }) => (
-      <blockquote className="border-l-4 border-blue-500 pl-6 italic text-gray-700 mb-6">
+      <blockquote className="mb-6 border-l-4 border-blue-500 pl-6 text-gray-700 italic">
         {children}
       </blockquote>
     ),
     code: ({ children }) => (
-      <code className="bg-gray-100 px-2 py-1 rounded text-sm font-mono">
+      <code className="rounded bg-gray-100 px-2 py-1 font-mono text-sm">
         {children}
       </code>
     ),
     pre: ({ children }) => (
-      <pre className="bg-gray-100 p-4 rounded-lg overflow-x-auto mb-6">
+      <pre className="mb-6 overflow-x-auto rounded-lg bg-gray-100 p-4">
         {children}
       </pre>
     ),

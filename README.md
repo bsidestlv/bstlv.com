@@ -5,21 +5,25 @@ Official website for BSidesTLV 2025 cybersecurity conference, built with Next.js
 ## Features
 
 ### 🏆 CTF Competition
+
 - Historical CTF results from 2022-2024
 - Challenge categories and participation information
 - Practice resources and registration details
 
 ### 🎤 Sessionize Integration
+
 - Dynamic speaker profiles via Sessionize API
 - Real-time agenda updates
 - Automatic fallback to static content when API is unavailable
 
 ### 📱 Mobile-Responsive Design
+
 - Hamburger navigation menu for mobile devices
 - Optimized layouts for desktop, tablet, and mobile
 - Comprehensive Playwright testing for all screen sizes
 
 ### 📝 MDX Content Management
+
 - Easy-to-maintain content using MDX files
 - Structured data files for speakers, team members, and event information
 - Consistent styling with Tailwind CSS components
@@ -29,22 +33,26 @@ Official website for BSidesTLV 2025 cybersecurity conference, built with Next.js
 1. **Clone the repository**
 
 2. **Install dependencies:**
+
    ```bash
    pnpm install
    ```
 
 3. **Install Playwright browsers:**
+
    ```bash
    pnpm exec playwright install
    ```
 
 4. **Set up environment variables (optional):**
+
    ```bash
    # Create .env.local with your Sessionize event ID
    SESSIONIZE_EVENT_ID=your_event_id_here
    ```
 
 5. **Run the development server:**
+
    ```bash
    pnpm dev
    ```
@@ -58,10 +66,11 @@ Official website for BSidesTLV 2025 cybersecurity conference, built with Next.js
 See [DEVELOPMENT.md](./DEVELOPMENT.md) for comprehensive development guidelines, best practices, and troubleshooting.
 
 ### Quick Development Checklist
+
 ```bash
 # Before submitting any changes:
 pnpm lint     # ✅ Lint code
-pnpm build    # ✅ Build project  
+pnpm build    # ✅ Build project
 pnpm test     # ✅ Run all tests
 ```
 
@@ -107,13 +116,16 @@ pnpm test     # ✅ Run all tests
 ## Troubleshooting
 
 ### ERR_PNPM_OUTDATED_LOCKFILE
+
 If you encounter lockfile issues:
+
 ```bash
 rm package-lock.json              # Remove npm lockfile
 pnpm install --no-frozen-lockfile  # Update pnpm lockfile
 ```
 
 ### Missing Browsers for Testing
+
 ```bash
 pnpm exec playwright install
 ```

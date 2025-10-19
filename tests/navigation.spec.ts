@@ -1,4 +1,4 @@
-import { test, expect } from "@playwright/test";
+import { expect, test } from "@playwright/test";
 
 test.describe("BSidesTLV Navigation", () => {
   test("navigation should be visible on desktop", async ({ page }) => {
@@ -35,7 +35,7 @@ test.describe("BSidesTLV Navigation", () => {
 
     // Check if mobile menu button is visible
     const menuButton = page.locator(
-      'button[aria-label="Toggle navigation menu"]'
+      'button[aria-label="Toggle navigation menu"]',
     );
     await expect(menuButton).toBeVisible();
 
@@ -49,7 +49,7 @@ test.describe("BSidesTLV Navigation", () => {
     await page.goto("/");
 
     const menuButton = page.locator(
-      'button[aria-label="Toggle navigation menu"]'
+      'button[aria-label="Toggle navigation menu"]',
     );
 
     // Test that the mobile menu button is functional (can be clicked)
@@ -67,7 +67,7 @@ test.describe("BSidesTLV Navigation", () => {
     await page.goto("/");
 
     const menuButton = page.locator(
-      'button[aria-label="Toggle navigation menu"]'
+      'button[aria-label="Toggle navigation menu"]',
     );
 
     // Open menu

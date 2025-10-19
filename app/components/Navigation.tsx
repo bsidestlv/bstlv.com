@@ -1,8 +1,8 @@
-'use client';
+"use client";
 
-import { useState } from 'react';
 import Image from "next/image";
 import Link from "next/link";
+import { useState } from "react";
 
 export default function Navigation() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -23,7 +23,7 @@ export default function Navigation() {
 
   return (
     <header className="bg-white shadow-sm">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4">
+      <div className="mx-auto max-w-7xl px-4 py-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between">
           <Link href="/">
             <Image
@@ -34,16 +34,16 @@ export default function Navigation() {
               priority
             />
           </Link>
-          
+
           {/* Desktop Navigation */}
-          <nav className="hidden md:flex space-x-8">
+          <nav className="hidden space-x-8 md:flex">
             {navItems.map((item) => (
-              <Link 
+              <Link
                 key={item.href}
-                href={item.href} 
+                href={item.href}
                 className={`font-semibold transition-colors ${
-                  item.href === "/" 
-                    ? "text-gray-900 hover:text-blue-600" 
+                  item.href === "/"
+                    ? "text-gray-900 hover:text-blue-600"
                     : "text-gray-700 hover:text-blue-600"
                 }`}
               >
@@ -54,12 +54,12 @@ export default function Navigation() {
 
           {/* Mobile Menu Button */}
           <button
-            className="md:hidden p-2"
+            className="p-2 md:hidden"
             onClick={toggleMenu}
             aria-label="Toggle navigation menu"
           >
             <svg
-              className="w-6 h-6"
+              className="h-6 w-6"
               fill="none"
               strokeLinecap="round"
               strokeLinejoin="round"
@@ -78,16 +78,16 @@ export default function Navigation() {
 
         {/* Mobile Navigation Menu */}
         {isMenuOpen && (
-          <div className="md:hidden mt-4 pb-4 border-t border-gray-200">
+          <div className="mt-4 border-t border-gray-200 pb-4 md:hidden">
             <nav className="flex flex-col space-y-2 pt-4">
               {navItems.map((item) => (
                 <Link
                   key={item.href}
                   href={item.href}
                   className={`px-4 py-2 text-base font-medium transition-colors ${
-                    item.href === "/" 
-                      ? "text-gray-900 hover:text-blue-600 hover:bg-gray-50" 
-                      : "text-gray-700 hover:text-blue-600 hover:bg-gray-50"
+                    item.href === "/"
+                      ? "text-gray-900 hover:bg-gray-50 hover:text-blue-600"
+                      : "text-gray-700 hover:bg-gray-50 hover:text-blue-600"
                   }`}
                   onClick={() => setIsMenuOpen(false)}
                 >

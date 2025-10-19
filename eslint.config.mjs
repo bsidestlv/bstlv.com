@@ -1,16 +1,31 @@
-import { dirname } from "path";
-import { fileURLToPath } from "url";
+import { includeIgnoreFile } from "@eslint/compat";
 import { FlatCompat } from "@eslint/eslintrc";
-
-const __filename = fileURLToPath(import.meta.url);
-const __dirname = dirname(__filename);
+import * as mdx from "eslint-plugin-mdx";
+import eslintPluginPrettierRecommended from "eslint-plugin-prettier/recommended";
+import { defineConfig } from "eslint/config";
+import { fileURLToPath } from "node:url";
 
 const compat = new FlatCompat({
-  baseDirectory: __dirname,
+  // import.meta.dirname is available after Node.js v20.11.0
+  baseDirectory: import.meta.dirname,
+  recommendedConfig: eslintPluginPrettierRecommended,
 });
 
-const eslintConfig = [
-  ...compat.extends("next/core-web-vitals", "next/typescript"),
-];
+const gitignorePath = fileURLToPath(new URL(".gitignore", import.meta.url));
 
-export default eslintConfig;
+export default defineConfig([
+  includeIgnoreFile(gitignorePath, "Imported .gitignore patterns"),
+  ...compat.config({
+    extends: ["next", "next/core-web-vitals", "next/typescript"],
+    plugins: ["prettier"],
+  }),
+  {
+    ...mdx.flat,
+    processor: mdx.createRemarkProcessor({
+      lintCodeBlocks: true,
+    }),
+  },
+  {
+    ...mdx.flatCodeBlocks,
+  },
+]);

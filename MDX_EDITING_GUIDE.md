@@ -12,7 +12,7 @@ The content files are located in the `content/` directory:
 
 - `content/home.mdx` - Homepage content
 - `content/code-of-conduct.mdx` - Code of Conduct page
-- `content/cfp.mdx` - Call for Papers page  
+- `content/cfp.mdx` - Call for Papers page
 - `content/volunteers.mdx` - Volunteers page
 
 ## Editing Content
@@ -21,11 +21,13 @@ The content files are located in the `content/` directory:
 
 ```markdown
 # Main Heading
-## Section Heading  
+
+## Section Heading
+
 ### Subsection Heading
 
 **Bold text**
-*Italic text*
+_Italic text_
 
 - Bullet point
 - Another bullet point
@@ -41,15 +43,16 @@ The content files are located in the `content/` directory:
 Each MDX file contains helpful comments at the top that explain what content is in that file and how to edit it safely. Comments look like this:
 
 ```markdown
-{/* 
-  This is a comment that won't appear on the website.
-  Edit this file to update the content that appears on the page.
-*/}
+{/_
+This is a comment that won't appear on the website.
+Edit this file to update the content that appears on the page.
+_/}
 ```
 
 ### What You Can Edit
 
 ✅ **Safe to edit:**
+
 - Headings and text content
 - Bullet points and numbered lists
 - Dates and times
@@ -57,10 +60,12 @@ Each MDX file contains helpful comments at the top that explain what content is 
 - Link text (but be careful with URLs)
 
 ⚠️ **Edit with caution:**
+
 - URLs and email addresses
 - File paths in links (like `/volunteers`)
 
 ❌ **Do not edit:**
+
 - Comments in `{/* */}` blocks (these are helpful instructions)
 - Anything that looks like code
 
@@ -72,7 +77,7 @@ In `content/cfp.mdx`, you can update dates like this:
 
 ```markdown
 - **CFP Opens**: February 16th, 2025 at 10:00
-- **CFP Closes**: April 15th, 2025 at 23:59  
+- **CFP Closes**: April 15th, 2025 at 23:59
 ```
 
 ### Updating Announcements
@@ -94,7 +99,7 @@ You can add new sections or remove sections entirely. Just follow the existing f
 ```markdown
 ## New Section Title
 
-Your new content here. You can use **bold text**, *italics*, and [links](https://example.com).
+Your new content here. You can use **bold text**, _italics_, and [links](https://example.com).
 
 ### Subsection
 

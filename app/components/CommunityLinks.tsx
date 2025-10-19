@@ -13,27 +13,25 @@ interface CommunityLinksProps {
   backgroundClass?: string;
 }
 
-export default function CommunityLinks({ 
-  links, 
+export default function CommunityLinks({
+  links,
   title = "Join Our Community",
-  backgroundClass = "bg-gray-100" 
+  backgroundClass = "bg-gray-100",
 }: CommunityLinksProps) {
   return (
     <section className={`py-16 ${backgroundClass}`}>
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-        <h2 className="text-3xl font-bold text-gray-900 mb-8">{title}</h2>
+      <div className="mx-auto max-w-7xl px-4 text-center sm:px-6 lg:px-8">
+        <h2 className="mb-8 text-3xl font-bold text-gray-900">{title}</h2>
         <div className="space-y-6">
           {links.map((link, index) => (
             <div key={index}>
-              <p className="text-lg text-gray-700 mb-4">
-                {link.description}
-              </p>
-              <a 
+              <p className="mb-4 text-lg text-gray-700">{link.description}</p>
+              <a
                 href={link.buttonUrl}
-                className={`inline-block px-6 py-3 rounded-lg transition-colors ${link.buttonStyle}`}
+                className={`inline-block rounded-lg px-6 py-3 transition-colors ${link.buttonStyle}`}
                 {...(link.external && {
                   target: "_blank",
-                  rel: "noopener noreferrer"
+                  rel: "noopener noreferrer",
                 })}
               >
                 {link.buttonText}

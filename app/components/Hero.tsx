@@ -5,23 +5,17 @@ interface HeroProps {
   children?: React.ReactNode;
 }
 
-export default function Hero({ 
-  title, 
-  subtitle, 
+export default function Hero({
+  title,
+  subtitle,
   backgroundClass = "bg-gradient-to-r from-blue-600 to-purple-700",
-  children 
+  children,
 }: HeroProps) {
   return (
-    <section className={`${backgroundClass} text-white py-20`}>
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-        <h1 className="text-4xl md:text-6xl font-bold mb-6">
-          {title}
-        </h1>
-        {subtitle && (
-          <p className="text-xl md:text-2xl mb-8">
-            {subtitle}
-          </p>
-        )}
+    <section className={`${backgroundClass} py-20 text-white`}>
+      <div className="mx-auto max-w-7xl px-4 text-center sm:px-6 lg:px-8">
+        <h1 className="mb-6 text-4xl font-bold md:text-6xl">{title}</h1>
+        {subtitle && <p className="mb-8 text-xl md:text-2xl">{subtitle}</p>}
         {children}
       </div>
     </section>

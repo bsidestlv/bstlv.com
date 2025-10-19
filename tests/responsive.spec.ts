@@ -1,4 +1,4 @@
-import { test, expect } from "@playwright/test";
+import { expect, test } from "@playwright/test";
 
 test.describe("Responsive Design Tests", () => {
   const pages = [
@@ -35,7 +35,7 @@ test.describe("Responsive Design Tests", () => {
 
         // Check mobile menu button is hidden
         const mobileButton = page.locator(
-          'button[aria-label="Toggle navigation menu"]'
+          'button[aria-label="Toggle navigation menu"]',
         );
         await expect(mobileButton).not.toBeVisible();
 
@@ -70,7 +70,7 @@ test.describe("Responsive Design Tests", () => {
 
         // Check mobile menu button is visible
         const mobileButton = page.locator(
-          'button[aria-label="Toggle navigation menu"]'
+          'button[aria-label="Toggle navigation menu"]',
         );
         await expect(mobileButton).toBeVisible();
 
@@ -119,7 +119,7 @@ test.describe("Responsive Design Tests", () => {
 
         // Check mobile menu button is hidden
         const mobileButton = page.locator(
-          'button[aria-label="Toggle navigation menu"]'
+          'button[aria-label="Toggle navigation menu"]',
         );
         await expect(mobileButton).not.toBeVisible();
 
