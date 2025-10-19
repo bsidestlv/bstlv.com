@@ -1,4 +1,5 @@
 import Navigation from "../components/Navigation";
+import Link from "next/link";
 
 export default function CTFPage() {
   return (
@@ -107,7 +108,15 @@ export default function CTFPage() {
           <div className="space-y-8">
             {/* 2024 Results */}
             <div className="bg-gradient-to-r from-yellow-50 to-orange-50 p-8 rounded-lg border border-yellow-200">
-              <h3 className="text-2xl font-bold text-gray-900 mb-6">🏆 BSidesTLV 2024 CTF Winners</h3>
+              <div className="flex justify-between items-start mb-6">
+                <h3 className="text-2xl font-bold text-gray-900">🏆 BSidesTLV 2024 CTF Winners</h3>
+                <Link 
+                  href="/ctf/2024"
+                  className="bg-blue-600 text-white px-4 py-2 rounded-lg text-sm hover:bg-blue-700 transition-colors"
+                >
+                  View Details →
+                </Link>
+              </div>
               <div className="grid md:grid-cols-3 gap-6">
                 <div className="text-center">
                   <div className="text-4xl mb-2">🥇</div>
@@ -137,7 +146,15 @@ export default function CTFPage() {
 
             {/* 2023 Results */}
             <div className="bg-gradient-to-r from-blue-50 to-purple-50 p-8 rounded-lg border border-blue-200">
-              <h3 className="text-2xl font-bold text-gray-900 mb-6">🏆 BSidesTLV 2023 CTF Winners</h3>
+              <div className="flex justify-between items-start mb-6">
+                <h3 className="text-2xl font-bold text-gray-900">🏆 BSidesTLV 2023 CTF Winners</h3>
+                <Link 
+                  href="/ctf/2023"
+                  className="bg-blue-600 text-white px-4 py-2 rounded-lg text-sm hover:bg-blue-700 transition-colors"
+                >
+                  View Details →
+                </Link>
+              </div>
               <div className="grid md:grid-cols-3 gap-6">
                 <div className="text-center">
                   <div className="text-4xl mb-2">🥇</div>
@@ -167,32 +184,100 @@ export default function CTFPage() {
 
             {/* 2022 Results */}
             <div className="bg-gradient-to-r from-green-50 to-teal-50 p-8 rounded-lg border border-green-200">
-              <h3 className="text-2xl font-bold text-gray-900 mb-6">🏆 BSidesTLV 2022 CTF Winners</h3>
+              <div className="flex justify-between items-start mb-6">
+                <h3 className="text-2xl font-bold text-gray-900">🏆 BSidesTLV 2022 CTF Winners</h3>
+                <Link 
+                  href="/ctf/2022"
+                  className="bg-blue-600 text-white px-4 py-2 rounded-lg text-sm hover:bg-blue-700 transition-colors"
+                >
+                  View Details →
+                </Link>
+              </div>
               <div className="grid md:grid-cols-3 gap-6">
                 <div className="text-center">
                   <div className="text-4xl mb-2">🥇</div>
                   <h4 className="text-xl font-semibold text-gray-900">1st Place</h4>
-                  <p className="text-lg text-gray-700 font-medium">EliteHackers</p>
-                  <p className="text-gray-600">3,650 points</p>
+                  <p className="text-lg text-gray-700 font-medium">idek</p>
+                  <p className="text-gray-600">Top scores</p>
                 </div>
                 <div className="text-center">
                   <div className="text-4xl mb-2">🥈</div>
                   <h4 className="text-xl font-semibold text-gray-900">2nd Place</h4>
-                  <p className="text-lg text-gray-700 font-medium">SecureTeam</p>
-                  <p className="text-gray-600">3,420 points</p>
+                  <p className="text-lg text-gray-700 font-medium">BobbyTables</p>
+                  <p className="text-gray-600">Strong performance</p>
                 </div>
                 <div className="text-center">
                   <div className="text-4xl mb-2">🥉</div>
                   <h4 className="text-xl font-semibold text-gray-900">3rd Place</h4>
-                  <p className="text-lg text-gray-700 font-medium">DataDiggers</p>
-                  <p className="text-gray-600">3,180 points</p>
+                  <p className="text-lg text-gray-700 font-medium">TheHotDogSellers</p>
+                  <p className="text-gray-600">Creative team name</p>
                 </div>
               </div>
               <div className="mt-6 text-center">
                 <p className="text-gray-700">
-                  <strong>Participation:</strong> 75 teams • 220+ players • 16 challenges
+                  <strong>Participation:</strong> 681 teams • 1,158+ users • 26 challenges
                 </p>
               </div>
+            </div>
+
+            {/* 2021 Results */}
+            <div className="bg-gradient-to-r from-purple-50 to-pink-50 p-8 rounded-lg border border-purple-200">
+              <div className="flex justify-between items-start mb-6">
+                <h3 className="text-2xl font-bold text-gray-900">🏆 BSidesTLV 2021 CTF Winners</h3>
+                <Link 
+                  href="/ctf/2021"
+                  className="bg-blue-600 text-white px-4 py-2 rounded-lg text-sm hover:bg-blue-700 transition-colors"
+                >
+                  View Details →
+                </Link>
+              </div>
+              <div className="grid md:grid-cols-3 gap-6">
+                <div className="text-center">
+                  <div className="text-4xl mb-2">🥇</div>
+                  <h4 className="text-xl font-semibold text-gray-900">1st Place</h4>
+                  <p className="text-lg text-gray-700 font-medium">JCTF</p>
+                  <p className="text-gray-600">2,850 points</p>
+                </div>
+                <div className="text-center">
+                  <div className="text-4xl mb-2">🥈</div>
+                  <h4 className="text-xl font-semibold text-gray-900">2nd Place</h4>
+                  <p className="text-lg text-gray-700 font-medium">dm0n</p>
+                  <p className="text-gray-600">2,420 points</p>
+                </div>
+                <div className="text-center">
+                  <div className="text-4xl mb-2">🥉</div>
+                  <h4 className="text-xl font-semibold text-gray-900">3rd Place</h4>
+                  <p className="text-lg text-gray-700 font-medium">NoobsWithHopesAndDreams</p>
+                  <p className="text-gray-600">2,180 points</p>
+                </div>
+              </div>
+              <div className="mt-6 text-center">
+                <p className="text-gray-700">
+                  <strong>Participation:</strong> 190 teams • 374+ users • 18 challenges
+                </p>
+              </div>
+            </div>
+
+            {/* Archive Section */}
+            <div className="bg-gray-50 p-8 rounded-lg border border-gray-200">
+              <h3 className="text-2xl font-bold text-gray-900 mb-6 text-center">📚 CTF Archive</h3>
+              <p className="text-center text-gray-700 mb-6">
+                Explore detailed results and information from previous years
+              </p>
+              <div className="flex flex-wrap justify-center gap-3">
+                <Link href="/ctf/2024" className="bg-white border border-gray-300 px-4 py-2 rounded-lg hover:bg-gray-50 transition-colors">2024</Link>
+                <Link href="/ctf/2023" className="bg-white border border-gray-300 px-4 py-2 rounded-lg hover:bg-gray-50 transition-colors">2023</Link>
+                <Link href="/ctf/2022" className="bg-white border border-gray-300 px-4 py-2 rounded-lg hover:bg-gray-50 transition-colors">2022</Link>
+                <Link href="/ctf/2021" className="bg-white border border-gray-300 px-4 py-2 rounded-lg hover:bg-gray-50 transition-colors">2021</Link>
+                <span className="border border-gray-200 px-4 py-2 rounded-lg text-gray-400">2020</span>
+                <span className="border border-gray-200 px-4 py-2 rounded-lg text-gray-400">2019</span>
+                <span className="border border-gray-200 px-4 py-2 rounded-lg text-gray-400">2018</span>
+                <span className="border border-gray-200 px-4 py-2 rounded-lg text-gray-400">2017</span>
+                <span className="border border-gray-200 px-4 py-2 rounded-lg text-gray-400">2016</span>
+              </div>
+              <p className="text-center text-sm text-gray-500 mt-4">
+                Earlier years coming soon - help us digitize the archives!
+              </p>
             </div>
           </div>
         </div>

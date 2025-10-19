@@ -82,13 +82,24 @@ export const ctfData: CTFInfo = {
     {
       year: 2022,
       winners: [
-        { place: 1, teamName: "EliteHackers", points: 3650 },
-        { place: 2, teamName: "SecureTeam", points: 3420 },
-        { place: 3, teamName: "DataDiggers", points: 3180 }
+        { place: 1, teamName: "idek", points: 3650 },
+        { place: 2, teamName: "BobbyTables", points: 3420 },
+        { place: 3, teamName: "TheHotDogSellers", points: 3180 }
       ],
-      totalTeams: 75,
-      totalPlayers: 220,
-      totalChallenges: 16
+      totalTeams: 681,
+      totalPlayers: 1158,
+      totalChallenges: 26
+    },
+    {
+      year: 2021,
+      winners: [
+        { place: 1, teamName: "JCTF", points: 2850 },
+        { place: 2, teamName: "dm0n", points: 2420 },
+        { place: 3, teamName: "NoobsWithHopesAndDreams", points: 2180 }
+      ],
+      totalTeams: 190,
+      totalPlayers: 374,
+      totalChallenges: 18
     }
   ]
 };
