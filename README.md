@@ -1,36 +1,132 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# BSidesTLV 2025 Website
 
-## Getting Started
+Official website for BSidesTLV 2025 cybersecurity conference, built with Next.js 15, featuring mobile-responsive design and dynamic content management.
 
-First, run the development server:
+## Features
 
+### 🏆 CTF Competition
+- Historical CTF results from 2022-2024
+- Challenge categories and participation information
+- Practice resources and registration details
+
+### 🎤 Sessionize Integration
+- Dynamic speaker profiles via Sessionize API
+- Real-time agenda updates
+- Automatic fallback to static content when API is unavailable
+
+### 📱 Mobile-Responsive Design
+- Hamburger navigation menu for mobile devices
+- Optimized layouts for desktop, tablet, and mobile
+- Comprehensive Playwright testing for all screen sizes
+
+### 📝 MDX Content Management
+- Easy-to-maintain content using MDX files
+- Structured data files for speakers, team members, and event information
+- Consistent styling with Tailwind CSS components
+
+## Quick Start
+
+1. **Clone the repository**
+
+2. **Install dependencies:**
+   ```bash
+   pnpm install
+   ```
+
+3. **Install Playwright browsers:**
+   ```bash
+   pnpm exec playwright install
+   ```
+
+4. **Set up environment variables (optional):**
+   ```bash
+   # Create .env.local with your Sessionize event ID
+   SESSIONIZE_EVENT_ID=your_event_id_here
+   ```
+
+5. **Run the development server:**
+   ```bash
+   pnpm dev
+   ```
+
+6. **Open [http://localhost:3000](http://localhost:3000) in your browser**
+
+## Development
+
+**⚠️ IMPORTANT: Always bold and test everything before completing work!**
+
+See [DEVELOPMENT.md](./DEVELOPMENT.md) for comprehensive development guidelines, best practices, and troubleshooting.
+
+### Quick Development Checklist
 ```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+# Before submitting any changes:
+pnpm lint     # ✅ Lint code
+pnpm build    # ✅ Build project  
+pnpm test     # ✅ Run all tests
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## Available Scripts
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+- `pnpm dev` - Start development server
+- `pnpm build` - Build for production
+- `pnpm start` - Start production server
+- `pnpm lint` - Run ESLint
+- `pnpm test` - Run Playwright tests
+- `pnpm test:headed` - Run tests with browser UI
+- `pnpm test:debug` - Debug tests interactively
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+## Project Structure
 
-## Learn More
+```
+├── app/                    # Next.js app directory
+│   ├── components/         # Reusable React components
+│   ├── ctf/               # CTF competition page
+│   ├── speakers/          # Speakers page with Sessionize integration
+│   ├── agenda/            # Event agenda with dynamic content
+│   └── ...                # Other pages
+├── data/                  # Structured data files
+│   ├── ctf/              # CTF historical data
+│   ├── team/             # Team member information
+│   └── sponsors/         # Sponsor information
+├── lib/                  # Utility functions
+│   └── api/              # API integration (Sessionize)
+├── tests/                # Playwright test files
+└── mdx-components.tsx    # MDX component definitions
+```
 
-To learn more about Next.js, take a look at the following resources:
+## Technologies Used
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+- **Framework**: Next.js 15 with App Router
+- **Package Manager**: pnpm
+- **Styling**: Tailwind CSS
+- **Content**: MDX for maintainable content
+- **Testing**: Playwright for e2e testing
+- **API**: Sessionize integration for dynamic content
+- **TypeScript**: Full type safety
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+## Troubleshooting
 
-## Deploy on Vercel
+### ERR_PNPM_OUTDATED_LOCKFILE
+If you encounter lockfile issues:
+```bash
+rm package-lock.json              # Remove npm lockfile
+pnpm install --no-frozen-lockfile  # Update pnpm lockfile
+```
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+### Missing Browsers for Testing
+```bash
+pnpm exec playwright install
+```
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+For more detailed troubleshooting, see [DEVELOPMENT.md](./DEVELOPMENT.md).
+
+## Contributing
+
+1. Follow the development guidelines in [DEVELOPMENT.md](./DEVELOPMENT.md)
+2. Always run the full test suite before submitting changes
+3. Ensure mobile responsiveness on all changes
+4. Test API integrations and fallback behavior
+
+## License
+
+This project is licensed under the MIT License.
